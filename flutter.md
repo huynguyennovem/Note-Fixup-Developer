@@ -1,4 +1,12 @@
-### Mac M1 fix build iOS:
+### Mac M1 - build iOS error by Ruby:
+
+Error:
+```
+...
+/Library/Ruby/Gems/2.6.0/gems/ffi-1.13.1/lib/ffi_c.bundle
+...
+```
+
 1. Duplicate the Terminal application in the Utilities folder.
 2. Right click on the app and choose Get Info.
 3. Rename the other version of the app as you like.
@@ -23,7 +31,7 @@ https://stackoverflow.com/a/64984210/5921933
 
 
 
-### Fix Flutter build with M1, NDK error:
+### Mac M1 - NDK error:
 
 ```
 org.gradle.process.internal.ExecException: A problem occurred starting process 'command '/Users/eriknguyen/Library/Android/sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-strip''
