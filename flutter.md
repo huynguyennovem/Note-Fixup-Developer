@@ -46,3 +46,13 @@ ndk.dir=/Users/eriknguyen/Library/Android/sdk/ndk/20.0.5594570
 (back to version 20.x.x)
 
 Refer: https://github.com/flutter/flutter/issues/76393#issuecomment-784224162
+
+### RenderFlex children have non-zero flex but incoming height constraints are unbounded.
+
+-> Wrap your `Column` inside an `Expanded`, `Flexible` or `SizedBox`:
+
+```
+Expanded(
+  child: Column()
+)
+```
