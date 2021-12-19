@@ -17,10 +17,12 @@ or
 >git stash push -m oidc_doing android/app data/ domain/lib/ lib/
 
 - Move your stashes from one repo to another
->git stash show -p stash@{0} > patch
->cd /new/project/dir
->git apply /old/project/dir/patchfile (if it failed, can try: git apply -3 /old/project/dir/patchfile)
->git stash
+```
+git stash show -p stash@{0} > patch
+cd /new/project/dir
+git apply /old/project/dir/patchfile (if it failed, can try: git apply -3 /old/project/dir/patchfile)
+git stash
+```
 
 ### Config user
 - Edit file .git/config from root of project
@@ -35,6 +37,7 @@ or
 ### Git squash:
 1. Select revision need to squash (6394dc)
 >git rebase --interactive 6394dc
+
 >git rebase -i --root
 
 - wrong on linux
@@ -47,7 +50,7 @@ or
 >git rebase --interactive @~2
 
 2. Change from pick -> squash or s:
-
+```
 pick 5ae70a9 first commit
 pick 2424829 update code
 pick 76f9271 update code
@@ -61,7 +64,8 @@ s 76f9271 update code
 s d895226 update code
 s ec03092 update code
 s 2fc8b0c update code, paging, playlist
-  
+```
+
 3. save file :wq
 
 4. git push origin master -f
@@ -74,16 +78,19 @@ s 2fc8b0c update code, paging, playlist
 >git push origin --delete ss_detail_image_counter
 
 ### Checkout PR from forked user
->git remote add imGok https://github.com/imGok/flutter-app.git
->git remote set-url --push imGok no_push
->git config credential.helper store
->git fetch imGok
->git checkout --track imGok/download_received_shares
+```
+git remote add imGok https://github.com/imGok/flutter-app.git
+git remote set-url --push imGok no_push
+git config credential.helper store
+git fetch imGok
+git checkout --track imGok/download_received_shares
+```
 
 ### Fixup & rebase commit 
 https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html 
 
 - Fixup:
+```
 $ (dev) git add featureA
 $ (dev) git commit -m "Feature A is done"
 [dev fb2f677] Feature A is done
@@ -94,9 +101,11 @@ $ (dev) git commit -m "Feature B is done"
 $ (dev) git add featureA                # you've removed a pdb : shameful commit
 $ (dev) git commit --fixup fb2f677
 [dev c5069d5] fixup! Feature A is done
-
+```
 
 - Rebase fixup:
+
+```
 $ (dev) git log --oneline
 c5069d5 fixup! Feature A is done
 733e2ff Feature B is done
@@ -110,12 +119,15 @@ fixup c9e138f fixup! Feature A is done
 pick 733e2ff Feature B is done
 
 $ (dev) Git push -f origin master
+```
 
 Result:
+```
 $ (dev) git log --oneline
 ff4de2a Feature B is done
 5478cee Feature A is done
 ac5db87 Previous commit
+```
 
 ### Add all file and dir 
 >git add subdir 	#will add subdir and everything in it recursively.
@@ -128,6 +140,7 @@ For eg:
 
 ### undo last commit (reset local changes)
 >git reset --hard HEAD^
+
 >git push origin -f
 
 ### commit empty commit:
@@ -147,5 +160,15 @@ Eg: change base của enhance_biometric_authen (features_v2 -> master)
 
 >git rebase --onto master features_v2 enhance_biometric_authen
 
+### How to move to a fork after cloning
+https://gist.github.com/jagregory/710671
 
+1. Fork their repo on Github
+2. In your local, add a new remote to your fork; then fetch it, and push your changes up to it
+
+>git remote add my-fork git@github...my-fork.git
+
+>git fetch my-fork
+
+>git push my-fork
 
