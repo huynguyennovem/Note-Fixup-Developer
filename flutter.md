@@ -56,3 +56,12 @@ Expanded(
   child: Column()
 )
 ```
+
+### Debug native Android and iOS code inside Flutter project
+- iOS:
+1. Open ios project inside Flutter project (Remember to choose `Runner.xcworkspace` instead of `Runner.xcodeproj`)
+2. From project folder navigation on the left:
+> Go to Pods > Development Pods > (select one of native plugin project you want to debug, for eg: flutter_downloader) > Keep go inside ... until see source code class which end with `.m` > Open file
+3. Set breakpoint anywhere you want to debug
+4. Run app
+
