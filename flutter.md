@@ -65,3 +65,11 @@ Expanded(
 3. Set breakpoint anywhere you want to debug
 4. Run app
 
+### Fix flutter intl
+```
+Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dart'.
+```
+
+Go to `Dart Analysis` > `Restart Dart Analysis Server` (Reload red icon)
+
+![Screen Shot 2021-12-28 at 1 18 50 PM](https://user-images.githubusercontent.com/29337364/147534796-12b141f1-9e75-40d3-baae-765262163d2c.png)
