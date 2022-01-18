@@ -15,6 +15,7 @@ https://developer.android.com/training/dependency-injection#di-alternatives
 
 ### Hex color
 
+```
 100% — FF
 95% — F2
 90% — E6
@@ -36,3 +37,4 @@ https://developer.android.com/training/dependency-injection#di-alternatives
 10% — 1A
 5%  — 0D
 0% —  00
+```
