@@ -73,3 +73,21 @@ Target of URI doesn't exist: 'package:flutter_gen/gen_l10n/app_localizations.dar
 Go to `Dart Analysis` > `Restart Dart Analysis Server` (Reload red icon)
 
 ![Screen Shot 2021-12-28 at 1 18 50 PM](https://user-images.githubusercontent.com/29337364/147534796-12b141f1-9e75-40d3-baae-765262163d2c.png)
+
+### Fix lỗi nhiều file Info.plist
+- Bối cảnh: Xcode 13 dùng Info plist ở Targets > Runner > Info tab > Custom iOS target Properties chứ ko load ở Info.plist
+Hoặc cách fix của [1] tạo ra 3 file Info plist thừa. 
+-> Khiến cho mọi config trong file Info.plist chính không tác dụng
+
+- Cách làm:
+  - Xóa 3 file thừa Info (debug, profile, release)
+  - Mở Xcode, chuột phải runner > Add Files to Runner > Sau đó chọn Info.plist duy nhất > Add
+  - Từ navigation trái, chọn Targets > Runner > Build Settings > Search "info.plist" để filter 
+  > Ở Packaging (Info.plist File), double click vào dòng đó và edit thành Runner/Info.plist
+  - Sang tab Build Phases > Copy Bundle Resources > Nếu có Info.plist thì xóa
+  - Sang tab Info, check lại config khớp với file Info.plist không, nếu có thì OK
+
+
+Tham khảo thêm: 
+1. https://stackoverflow.com/questions/56844012/xcode-backend-sh-no-such-file-or-directory-do-i-need-to-create-this-file
+2. https://stackoverflow.com/questions/67896404/where-is-info-plist-in-xcode-13-missing-not-inside-project-navigator
