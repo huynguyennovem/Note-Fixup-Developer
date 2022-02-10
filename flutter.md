@@ -91,3 +91,28 @@ Hoặc cách fix của [1] tạo ra 3 file Info plist thừa.
 Tham khảo thêm: 
 1. https://stackoverflow.com/questions/56844012/xcode-backend-sh-no-such-file-or-directory-do-i-need-to-create-this-file
 2. https://stackoverflow.com/questions/67896404/where-is-info-plist-in-xcode-13-missing-not-inside-project-navigator
+
+### This widget has been unmounted, so the State no longer has a context (and should be considered defunct). 
+- Usecase: After dimissed a Dialog, we use something that need a context (For eg: `AppLocalizations.of(context)`)
+- Cause: When the Dialog showing, the current Widget is disposed, then it's unmounted due to loss context.
+- How to fix:
+
+Use bloc state management: 
+
+```
+//On Dialog
+clickOKAction: () => blocCubit.emitOKActionState()
+...
+
+//On the bloc file
+fun emitOKActionState(){
+   emit(OKActionState());
+}
+
+//On Widget
+listener: (context, state) async {
+   if(state is OKActionState) {
+        // HANDLE YOUR ACTION HERE
+   }
+}
+```
