@@ -116,3 +116,17 @@ listener: (context, state) async {
    }
 }
 ```
+
+### Bloc listener is not invoked even emitted new state
+Make sure the widget is built. Delay some secs may help but not perfect.
+Try this:
+
+```
+@override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+      await joiningCubit.checkServerDifference(widget.requestedToken, widget.incomingHost);
+    });
+  }
+```
