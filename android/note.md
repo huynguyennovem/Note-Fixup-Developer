@@ -38,3 +38,58 @@ https://developer.android.com/training/dependency-injection#di-alternatives
 5%  — 0D
 0% —  00
 ```
+
+### Navigation component popUpTo with argument
+
+
+https://stackoverflow.com/questions/56243119/pass-data-back-to-previous-fragment-using-android-navigation
+
+- Fragment A:
+```kotlin
+val navController = findNavController();
+navController.currentBackStackEntry?.savedStateHandle?.getLiveData<SourceScreen>(SOURCE_SCREEN)?.observe(
+    viewLifecycleOwner) { result ->
+    homeViewModel.sourceScreen.value = Event(result)
+}
+```
+
+- Fragment B:
+    - To send data back to previous fragment:
+
+   ```kotlin
+      findNavController().previousBackStackEntry?.savedStateHandle.set(HomeFragment.SOURCE_SCREEN, SourceScreen.Gallery)
+      openFragmentByDirection(GalleryFragmentDirections.actionNavigationGalleryToNavigationHome())
+   ```
+    - To send data back to any other fragments:
+
+   ```kotlin
+      findNavController().getBackStackEntry(R.id.navigation_home).savedStateHandle.set(HomeFragment.SOURCE_SCREEN, SourceScreen.Gallery)
+      openFragmentByDirection(GalleryFragmentDirections.actionNavigationGalleryToNavigationHome())
+   ```
+   
+- navigation.xml
+
+```xml
+<fragment
+	android:id="@+id/navigation_home"
+	android:name=".HomeFragment"
+	android:label="@string/title_home"
+	tools:layout="@layout/fragment_home">
+
+	<action
+            android:id="@+id/action_navigation_home_to_navigation_gallery"
+            app:destination="@id/navigation_gallery" />
+			
+</fragment>			
+
+<fragment
+        android:id="@+id/navigation_gallery"
+        android:name=".GalleryFragment"
+        android:label="@string/title_save_gallery"
+        tools:layout="@layout/fragment_gallery">
+     
+        <action
+            android:id="@+id/action_navigation_gallery_to_navigation_home"
+            app:popUpTo="@id/navigation_home" />
+</fragment>
+```
