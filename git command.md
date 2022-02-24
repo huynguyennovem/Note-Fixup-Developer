@@ -22,8 +22,9 @@ or
 ```
 git stash show -p stash@{0} > patch
 cd /new/project/dir
-git apply /old/project/dir/patchfile (if it failed, can try: git apply -3 /old/project/dir/patchfile)
-git stash
+git apply /old/project/dir/patch 
+(if it failed, can try: git apply -3 /old/project/dir/patchfile) 
+(or you can copy patch file into new project dir then apply it: `git apply patch`)
 ```
 
 ### Config user
