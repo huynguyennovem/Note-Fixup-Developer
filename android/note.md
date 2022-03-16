@@ -93,3 +93,25 @@ navController.currentBackStackEntry?.savedStateHandle?.getLiveData<SourceScreen>
             app:popUpTo="@id/navigation_home" />
 </fragment>
 ```
+
+### How to verify applink
+
+https://developer.android.com/training/app-links/verify-site-associations#invoke-domain-verification
+
+adb shell pm verify-app-links --re-verify <package-name>
+adb shell pm get-app-links <package-name>
+	
+- Example:
+	
+```	
+adb shell pm verify-app-links --re-verify com.twake.twake
+
+adb shell pm get-app-links com.twake.twake
+  com.twake.twake:
+    ID: 926003d9-5cdb-4e6e-ac8f-b9433e5c7739
+    Signatures: [3F:A6:0E:29:87:A4:0E:EA:12:02:16:8F:DA:76:86:22:F0:64:EB:2D:14:3D:6F:92:D6:F4:16:CB:DA:69:53:2C]
+    Domain verification state:
+      web.qa.twake.app: legacy_failure
+      canary.twake.app: legacy_failure
+      web.twake.app: legacy_failure
+```
