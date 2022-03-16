@@ -98,9 +98,9 @@ navController.currentBackStackEntry?.savedStateHandle?.getLiveData<SourceScreen>
 
 https://developer.android.com/training/app-links/verify-site-associations#invoke-domain-verification
 
-> adb shell pm verify-app-links --re-verify <package-name>
+> adb shell pm verify-app-links --re-verify PACKAGE_NAME
 	
-> adb shell pm get-app-links <package-name>
+> adb shell pm get-app-links PACKAGE_NAME
 	
 - Example:
 	
