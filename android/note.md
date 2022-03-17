@@ -116,3 +116,7 @@ adb shell pm get-app-links com.twake.twake
       canary.twake.app: legacy_failure
       web.twake.app: legacy_failure
 ```
+
+- Tool for debugging:
+
+> adb shell dumpsys package PACKAGE_NAME
