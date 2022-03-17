@@ -119,7 +119,9 @@ adb shell pm get-app-links com.twake.twake
 
 - Tool for debugging:
 
-> adb shell dumpsys package PACKAGE_NAME
+    - https://developer.android.com/training/app-links/verify-site-associations#check-link-policies
+    
+    > adb shell dumpsys package PACKAGE_NAME
 
 ```
 Domain verification status:
