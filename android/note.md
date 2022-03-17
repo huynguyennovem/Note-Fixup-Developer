@@ -120,3 +120,21 @@ adb shell pm get-app-links com.twake.twake
 - Tool for debugging:
 
 > adb shell dumpsys package PACKAGE_NAME
+
+```
+Domain verification status:
+  com.twake.twake:
+    ID: d23c2685-7312-4c38-8658-1fb7e5490f5f
+    Signatures: [3F:A6:0E:29:87:A4:0E:EA:12:02:16:8F:DA:76:86:22:F0:64:EB:2D:14:3D:6F:92:D6:F4:16:CB:DA:69:53:2C]
+    Domain verification state:
+      web.qa.twake.app: legacy_failure
+      canary.twake.app: legacy_failure
+      web.twake.app: legacy_failure
+    User all:
+      Verification link handling allowed: true
+      Selection state:
+        Disabled:
+          web.qa.twake.app
+          canary.twake.app
+          web.twake.app
+```
