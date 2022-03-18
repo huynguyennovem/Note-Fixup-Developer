@@ -130,3 +130,8 @@ Try this:
     });
   }
 ```
+
+### IntrinsicHeight
+
+- Same as `wrap_content` in Android
+- Set child's IntrinsicHeight to wrap_content by itself children height. For eg: http://woolha.com/tutorials/flutter-using-instrinsicheight-widget-examples
