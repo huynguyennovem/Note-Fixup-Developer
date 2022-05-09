@@ -135,3 +135,21 @@ Try this:
 
 - Same as `wrap_content` in Android
 - Set child's IntrinsicHeight to wrap_content by itself children height. For eg: http://woolha.com/tutorials/flutter-using-instrinsicheight-widget-examples
+
+
+### Deploy Flutter web app to Firebase hosting
+
+- cd <project_root_dir>
+- firebase init hosting
+
+```
+? What do you want to use as your public directory? build/web
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
+? File build/web/index.html already exists. Overwrite? Yes
+✔  Wrote build/web/index.html
+
+```
+
+- firebase deploy --only hosting
+
