@@ -26,3 +26,7 @@ Others similar:
   Then execute `pod install` command.
   
 - `pod update`: auto pull latest version and upgrade libs that are defined on `Podfile`
+
+- Compare between two projects:
+    - First: Add Swift Package Manager > Cocoapods -> may get a lot og weird errors
+    - Second: Add Cocoapods > Swift Package Manager -> may get less error than `First`
