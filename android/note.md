@@ -140,3 +140,14 @@ Domain verification status:
           canary.twake.app
           web.twake.app
 ```
+
+
+
+### Cash connected Android device to host machine
+
+https://github.com/Genymobile/scrcpy
+
+- For MacOS:
+1. Install `brew install scrcpy`
+2. Connect device to Mac via cable
+3. Run `scrcpy`
