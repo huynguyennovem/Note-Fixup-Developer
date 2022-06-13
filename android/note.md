@@ -143,7 +143,7 @@ Domain verification status:
 
 
 
-### Cash connected Android device to host machine
+### Cast connected Android device to host machine
 
 https://github.com/Genymobile/scrcpy
 
